@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { saveComment } from 'store/actions'
+import { saveComment, loadComments } from 'store/actions'
 
 class CommentBox extends React.Component {
 	constructor(props) {
@@ -20,17 +20,22 @@ class CommentBox extends React.Component {
 		this.setState({ comment: '' })
 	}
 
+	handleLoadComments = () => {
+		this.props.loadComments()
+	}
+
 	render() {
 		return (
 			<form onSubmit={this.handleSubmit}>
 				<h4>Add a Comment</h4>
 				<textarea value={this.state.comment} onChange={this.handleChange} />
 				<div>
-					<button>Submit</button>
+					<button type="submit">Submit</button>
+					<button type="button" onClick={this.handleLoadComments}>Load Comments</button>
 				</div>
 			</form>
 		)
 	}
 }
 
-export default connect(null, { saveComment })(CommentBox)
+export default connect(null, { saveComment, loadComments })(CommentBox)
