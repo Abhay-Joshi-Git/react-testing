@@ -1,7 +1,9 @@
+# react testing example
+
 - unit testing components, reducer
 - integration testing with fetch comments flow
 
-# Jest, Enzyme, moxios
+##Jest, Enzyme, moxios
 
 used jest, enzyme for component testing
 
