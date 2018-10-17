@@ -31,7 +31,7 @@ class CommentBox extends React.Component {
 				<textarea value={this.state.comment} onChange={this.handleChange} />
 				<div>
 					<button type="submit">Submit</button>
-					<button type="button" onClick={this.handleLoadComments}>Load Comments</button>
+					<button type="button" id="load-comments" onClick={this.handleLoadComments}>Load Comments</button>
 				</div>
 			</form>
 		)
